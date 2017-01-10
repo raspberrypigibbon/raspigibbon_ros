@@ -1,8 +1,8 @@
-# raspiarm_ros
+# raspigibbon_ros
 
 ## About
 
-Raspberry Pi Arm Controller + Raspberry Pi Simulator suites runs on Gazebo
+Raspberry Pi Gibbon Controller + Raspberry Pi Gibbon Simulator suites runs on Gazebo
 
 ## Requirements
 
