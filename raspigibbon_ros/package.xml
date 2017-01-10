@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <name>raspigibbon_ros</name>
+  <version>0.1.0</version>
+  <description>The raspigibbon_ros package</description>
+
+  <maintainer email="tiryoh@gmail.com">Tiryoh</maintainer>
+  <author email="tiryoh@gmail.com">Tiryoh</author>
+
+  <license>MIT</license>
+
+  <url type="website">http://github.com/raspigibbon_ros/wiki</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>raspigibbon_description</run_depend>
+  <run_depend>raspigibbon_controll</run_depend>
+  <run_depend>raspigibbon_gazebo</run_depend>
+
+  <export>
+    <metapackage />
+
+  </export>
+</package>
