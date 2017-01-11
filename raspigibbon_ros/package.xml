@@ -13,8 +13,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>raspigibbon_description</run_depend>
-  <run_depend>raspigibbon_controll</run_depend>
-  <run_depend>raspigibbon_gazebo</run_depend>
 
   <export>
     <metapackage />
