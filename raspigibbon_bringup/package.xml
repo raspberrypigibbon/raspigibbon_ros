@@ -2,7 +2,7 @@
 <package>
   <name>raspigibbon_bringup</name>
   <version>0.0.0</version>
-  <bringup>The raspigibbon_bringup package</bringup>
+  <description>The raspigibbon_bringup package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
