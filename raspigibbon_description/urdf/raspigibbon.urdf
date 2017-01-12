@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot name="raspigibbon">
  
+  <link name="base" />
   <link name="base_link">
     <visual>
       <origin xyz="0 0 0.0227" rpy="0 0 0" />
@@ -13,6 +14,12 @@
     </visual>
   </link>
  
+  <joint name="joint0" type="fixed">
+    <parent link="base"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
   <joint name="joint1" type="revolute">
     <parent link="base_link"/>
     <child link="link1"/>
