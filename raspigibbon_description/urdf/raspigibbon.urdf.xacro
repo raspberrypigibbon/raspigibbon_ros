@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot name="raspigibbon"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find raspigibbon_description)/urdf/base.urdf.xacro" />
+  <xacro:include filename="$(find raspigibbon_description)/urdf/link.urdf.xacro" />
+
+  <!-- ========== Link & Joint ========== -->
+  <xacro:>
+
+  <!-- ========== Transmission ========== -->
+  <xacro:transmission prefix="joint1" interface="PositionJointInterface" />
+  <xacro:transmission prefix="joint2" interface="PositionJointInterface" />
+  <xacro:transmission prefix="joint3" interface="PositionJointInterface" />
+  <xacro:transmission prefix="joint4" interface="PositionJointInterface" />
+  <xacro:transmission prefix="joint5" interface="PositionJointInterface" />
+  <xacro:transmission prefix="joint6" interface="PositionJointInterface" />
+
+  <!-- ========== Gazebo ========== -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>raspigibbon</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <xacro:base_gazebo />
+  <xacro:link_gazebo id="1"/>
+  <xacro:link_gazebo id="2"/>
+  <xacro:link_gazebo id="3"/>
+  <xacro:link_gazebo id="4"/>
+  <xacro:link_gazebo id="5"/>
+
+</robot>
