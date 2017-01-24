@@ -10,7 +10,6 @@
     <joint name="${jointname}" type="revolute">
       <insert_block name="joint_origin" />
       <insert_block name="joint_axis" />
-      <!-- <limit lower="&#45;1.57" upper="1.57" effort="0.5293" velocity="6.159937255" /> -->
       <insert_block name="joint_limit" />
       <friction friction="${joint_friction}" />
       <dynamics damping="${joint_damping}" />
@@ -50,12 +49,12 @@
     <link name="link${linkid}">
       <visual>
         <geometry>
-          <mesh filename="package://raspigibbon_description/meshes/dae/hand${meshid}_link.dae" />
+          <mesh filename="package://raspigibbon_description/meshes/dae/hand_link${meshid}.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://raspigibbon_description/meshes/dae/hand${meshid}_link.dae" />
+          <mesh filename="package://raspigibbon_description/meshes/dae/hand_link${meshid}.dae" />
         </geometry>
       </collision>
       <inertial>
