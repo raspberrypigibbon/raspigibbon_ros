@@ -50,18 +50,18 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axys xyz="0 0 0" />
     <limit lower="-2.61799387791667" upper="2.61799387791667" effort="0.5293" velocity="6.159937255" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <axys xyz="0 0 0" />
-    <limit lower="-2.61799387791667" upper="2.61799387791667" effort="0.5293" velocity="6.159937255" />
+    <origin xyz="0.000253 0.000821 0.013947 " />
+    <mass value="0.041117" />
+    <inertia ixx="0.000006913101" ixy="0.000000054083" iyy="0.000009528465" ixz="-0.000000059992" iyz="-0.000000095617" izz="0.000008648857" />
   </xacro:hand_link>
 
   <xacro:hand_link linkid="6" meshid="2" jointname="joint6" parent="link4">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <axys xyz="0 0 0" />
     <limit lower="-2.61799387791667" upper="2.61799387791667" effort="0.5293" velocity="6.159937255" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <axys xyz="0 0 0" />
-    <limit lower="-2.61799387791667" upper="2.61799387791667" effort="0.5293" velocity="6.159937255" />
+    <origin xyz="0.000253 0.000821 0.013947 " />
+    <mass value="0.041117" />
+    <inertia ixx="0.000006913101" ixy="0.000000054083" iyy="0.000009528465" ixz="-0.000000059992" iyz="-0.000000095617" izz="0.000008648857" />
   </xacro:hand_link>
 
   <!-- ========== Transmission ========== -->
