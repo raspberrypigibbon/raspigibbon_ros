@@ -12,7 +12,7 @@ class Dummy:
     def joint_callback(self, msg):
         js = JointState();
         js.name.append("joint6")
-        js.position.append(msg.position[4])
+        js.position.append(-msg.position[4])
         self.pub.publish(js)
         rospy.sleep(0.001)
 
