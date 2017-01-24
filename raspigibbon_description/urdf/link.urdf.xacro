@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="$(find raspigibbon_description)/urdf/link.gazebo.xacro" />
+  <xacro:include filename="$(find raspigibbon_description)/urdf/link.transmission.xacro" />
   <xacro:property name="M_PI" value="3.1415926535897931" />
   <xacro:property name="velocity_scale_factor" value="1.0" />
-  <xacro:macro name="link" params="id jointname parent *joint_origin *joint_axis *joint_limit *inertial_origin *inertial_mass *inertial_inertia">
+  <xacro:property name="joint_friction" value="1.0" />
+  <xacro:property name="joint_damping" value="1.0" />
+  <xacro:macro name="servo_link" params="linkid meshid jointname parent *joint_origin *joint_axis *joint_limit *inertial_origin *inertial_mass *inertial_inertia">
     <joint name="${jointname}" type="revolute">
       <insert_block name="joint_origin" />
       <insert_block name="joint_axis" />
@@ -12,17 +15,47 @@
       <friction friction="${joint_friction}" />
       <dynamics damping="${joint_damping}" />
       <parent link="${parent}" />
-      <child link="link${id}" />
+      <child link="link${linkid}" />
     </joint>
-    <link name="link${id}">
+    <link name="link${linkid}">
       <visual>
         <geometry>
-          <mesh filename="package://raspigibbon_description/meshes/dae/servo${id}_link.dae" />
+          <mesh filename="package://raspigibbon_description/meshes/dae/servo${meshid}_link.dae" />
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://raspigibbon_description/meshes/dae/servo${id}_link.dae" />
+          <mesh filename="package://raspigibbon_description/meshes/dae/servo${meshid}_link.dae" />
+        </geometry>
+      </collision>
+      <inertial>
+        <insert_block name="inertial_origin" />
+        <insert_block name="inertial_mass" />
+        <insert_block name="inertial_inertia" />
+      </inertial>
+    </link>
+  </xacro:macro>
+
+  <xacro:macro name="hand_link" params="linkid meshid jointname parent *joint_origin *joint_axis *joint_limit *inertial_origin *inertial_mass *inertial_inertia">
+    <joint name="${jointname}" type="revolute">
+      <insert_block name="joint_origin" />
+      <insert_block name="joint_axis" />
+      <!-- <limit lower="&#45;1.57" upper="1.57" effort="0.5293" velocity="6.159937255" /> -->
+      <insert_block name="joint_limit" />
+      <friction friction="${joint_friction}" />
+      <dynamics damping="${joint_damping}" />
+      <parent link="${parent}" />
+      <child link="link${linkid}" />
+    </joint>
+    <link name="link${linkid}">
+      <visual>
+        <geometry>
+          <mesh filename="package://raspigibbon_description/meshes/dae/hand${meshid}_link.dae" />
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://raspigibbon_description/meshes/dae/hand${meshid}_link.dae" />
         </geometry>
       </collision>
       <inertial>
