@@ -3,6 +3,6 @@
   <!-- <rosparam file="$(find raspigibbon_control)/config/controller.yaml" command="load" /> -->
   <include file="$(find raspigibbon_description)/launch/display_urdf.launch" />
   <group ns="raspigibbon">
-    <node name="joint_state_publisher" pkg="raspigibbon_control" type="rviz_to_slave.py" />
+    <node name="joint_state_publisher" pkg="raspigibbon_control" type="rviz_joint_publisher.py" />
   </group>
 </launch>
