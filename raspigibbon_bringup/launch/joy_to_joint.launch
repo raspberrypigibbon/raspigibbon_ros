@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-  <node name="joy" pkg="joy" type="joy_node" />
-  <group ns="raspigibbon">
-    <node name="master_joint_state" pkg="raspigibbon_control" type="joy_to_joint.py" />
-  </group>
-</launch>
