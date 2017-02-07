@@ -6,8 +6,8 @@ from sensor_msgs.msg import JointState
 
 class Slave:
     def __init__(self):
-            self.sub = rospy.Subscriber("/raspigibbon/master_joint_state", JointState, self.joint_callback, queue_size=10)
-            self.pub = rospy.Publisher("/joint_states_source", JointState, queue_size=10)
+        self.sub = rospy.Subscriber("/raspigibbon/master_joint_state", JointState, self.joint_callback, queue_size=10)
+        self.pub = rospy.Publisher("/joint_states_source", JointState, queue_size=10)
 
     def joint_callback(self, msg):
         js = JointState();
@@ -20,7 +20,7 @@ class Slave:
 if __name__ == "__main__":
     try:
         while not rospy.is_shutdown():
-            rospy.init_node("rviz_slave_joint_state")
+            rospy.init_node("rviz_joint_state_subscriber")
             slave = Slave()
             rospy.spin()
     except rospy.ROSIntteruptException:
