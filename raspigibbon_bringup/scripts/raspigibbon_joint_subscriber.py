@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from raspigibbon_utils import RS30X
+from futaba_serial_servo import RS30X
 import rospy
 from sensor_msgs.msg import JointState
 
