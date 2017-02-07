@@ -2,7 +2,7 @@
 
 ## About
 
-Raspberry Pi Gibbon Controller suites runs on Gazebo
+ROS package suites of Raspberry Pi Gibbon Controller
 
 ## Requirements
 
