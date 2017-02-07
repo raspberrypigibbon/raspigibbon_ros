@@ -13,10 +13,7 @@ class Slave:
         js = JointState();
         for i in range(1, 6):
             js.name.append("joint"+str(i))
-            if i == 2 or i == 1:
-                js.position.append(msg.position[i-1]*180.0/3.14159*-1)
-            else:
-                js.position.append(msg.position[i-1]*180.0/3.14159)
+            js.position.append(msg.position[i-1]*180.0/3.14159)
         self.pub.publish(js)
         rospy.sleep(0.01)
 
