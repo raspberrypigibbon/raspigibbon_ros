@@ -19,10 +19,17 @@ class Slave:
             self.rs.setAngle(i, msg.position[i-1])
         rospy.sleep(0.01)
 
+    def shutdown(self):
+        for i in range(1,6):
+            self.rs.setTorque(i, False)
+            rospy.sleep(0.01)
+        rospy.loginfo("set all servo torque_off")
+
 if __name__ == "__main__":
     try:
         while not rospy.is_shutdown():
             rospy.init_node("slave_joint_state")
+            rospy.on_shutdown(self.shutdown)
             slave = Slave()
             rospy.spin()
     except rospy.ROSInterruptException:
