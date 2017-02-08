@@ -4,7 +4,7 @@
 import rospy
 from sensor_msgs.msg import JointState
 
-class Slave:
+class RvizSlave:
     def __init__(self):
         self.sub = rospy.Subscriber("/raspigibbon/master_joint_state", JointState, self.joint_callback, queue_size=10)
         self.pub = rospy.Publisher("/joint_states_source", JointState, queue_size=10)
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     try:
         while not rospy.is_shutdown():
             rospy.init_node("rviz_joint_state_subscriber")
-            slave = Slave()
+            rviz = RvizSlave()
             rospy.spin()
     except rospy.ROSIntteruptException:
         pass
