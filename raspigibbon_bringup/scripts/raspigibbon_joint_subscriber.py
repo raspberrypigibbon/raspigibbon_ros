@@ -29,8 +29,8 @@ if __name__ == "__main__":
     try:
         while not rospy.is_shutdown():
             rospy.init_node("slave_joint_state")
-            rospy.on_shutdown(self.shutdown)
             slave = Slave()
+            rospy.on_shutdown(slave.shutdown)
             rospy.spin()
     except rospy.ROSInterruptException:
         pass
