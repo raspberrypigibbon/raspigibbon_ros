@@ -21,6 +21,23 @@ class Slave:
 
     def shutdown(self):
         for i in range(1,6):
+            self.rs.setAngleInTime(i, 0, 2)
+            rospy.sleep(0.1)
+        while self.rs.readAngle(2) > 0:
+            rospy.sleep(0.1)
+        self.rs.setAngle(1,0)
+        rospy.sleep(0.1)
+        self.rs.setAngleInTime(2, 80, 4)
+        rospy.sleep(0.1)
+        self.rs.setAngleInTime(3, -130, 4)
+        rospy.sleep(0.1)
+        self.rs.setAngleInTime(4, -80, 4)
+        rospy.sleep(0.1)
+        self.rs.setAngle(5,0)
+        rospy.sleep(0.1)
+        while self.rs.readAngle(4) > -80:
+            rospy.sleep(0.1)
+        for i in range(1,6):
             self.rs.setTorque(i, False)
             rospy.sleep(0.01)
         rospy.loginfo("set all servo torque_off")
