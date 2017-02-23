@@ -8,7 +8,7 @@ from sensor_msgs.msg import JointState
 class Slave:
     def __init__(self):
         self.rs = RS30X.RS304MD()
-        self.sub = rospy.Subscriber("/raspigibbon/master_joint_state", JointState, self.joint_callback, queue_size=10)
+        self.sub = rospy.Subscriber(rospy.get_namespace()+"master_joint_state", JointState, self.joint_callback, queue_size=10)
         for i in range(1,6):
             self.rs.setTorque(i, True)
             rospy.sleep(0.01)
