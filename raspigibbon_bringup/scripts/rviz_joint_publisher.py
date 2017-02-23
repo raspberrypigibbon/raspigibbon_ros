@@ -8,6 +8,7 @@ class RvizMaster:
     def __init__(self):
         self.sub = rospy.Subscriber(rospy.get_namespace()+"joint_states", JointState, self.joint_callback, queue_size=10)
         self.pub = rospy.Publisher("master_joint_state", JointState, queue_size=10)
+        self.r = rospy.Rate(30)
 
     def joint_callback(self, msg):
         js = JointState();
@@ -15,7 +16,7 @@ class RvizMaster:
             js.name.append("joint"+str(i))
             js.position.append(msg.position[i-1]*180.0/3.14159)
         self.pub.publish(js)
-        rospy.sleep(0.01)
+        self.r.sleep()
 
 if __name__ == "__main__":
     try:

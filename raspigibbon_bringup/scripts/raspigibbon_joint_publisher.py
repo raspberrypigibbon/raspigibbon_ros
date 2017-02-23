@@ -9,6 +9,7 @@ class Master:
     def __init__(self):
         self.rs = RS30X.RS304MD()
         self.pub = rospy.Publisher("master_joint_state", JointState, queue_size=10)
+        self.r = rospy.Rate(30)
         for i in range(1,6):
             self.rs.setTorque(i, False)
             rospy.sleep(0.01)
@@ -20,7 +21,7 @@ class Master:
             js.name=["joint{}".format(i) for i in range(1,6)]
             js.position = [max(-150,min(150,self.rs.readAngle(i))) for i in range(1,6)]
             self.pub.publish(js)
-            rospy.sleep(0.01)
+            self.r.sleep()
 
 if __name__ == "__main__":
     rospy.init_node("master_joint_state")

@@ -9,6 +9,7 @@ class Slave:
     def __init__(self):
         self.rs = RS30X.RS304MD()
         self.sub = rospy.Subscriber(rospy.get_namespace()+"master_joint_state", JointState, self.joint_callback, queue_size=10)
+        self.r = rospy.Rate(30)
         for i in range(1,6):
             self.rs.setTorque(i, True)
             rospy.sleep(0.01)
@@ -17,7 +18,7 @@ class Slave:
     def joint_callback(self, msg):
         for i in range(1, 6):
             self.rs.setAngle(i, msg.position[i-1])
-        rospy.sleep(0.01)
+        self.r.sleep()
 
     def shutdown(self):
         for i in range(1,6):
