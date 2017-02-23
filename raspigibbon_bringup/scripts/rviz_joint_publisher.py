@@ -8,7 +8,7 @@ class RvizMaster:
     def __init__(self):
         self.sub = rospy.Subscriber(rospy.get_namespace()+"joint_states", JointState, self.joint_callback, queue_size=10)
         self.pub = rospy.Publisher("master_joint_state", JointState, queue_size=10)
-        self.r = rospy.Rate(30)
+        self.r = rospy.Rate(40)
 
     def joint_callback(self, msg):
         js = JointState();
