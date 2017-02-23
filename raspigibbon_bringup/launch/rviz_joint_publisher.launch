@@ -1,8 +1,11 @@
 <?xml version="1.0"?>
 <launch>
   <!-- <rosparam file="$(find raspigibbon_control)/config/controller.yaml" command="load" /> -->
-  <group ns="raspigibbon">
+  <group ns="raspigibbon_on_rviz">
     <include file="$(find raspigibbon_description)/launch/display_urdf.launch" />
+  </group>
+  <group ns="raspigibbon">
     <node name="rviz_joint_publisher" pkg="raspigibbon_bringup" type="rviz_joint_publisher.py" />
   </group>
+  <!-- <remap from="/raspigibbon_on_rviz/master_joint_state" to="/raspigibbon/master_joint_state" /> -->
 </launch>

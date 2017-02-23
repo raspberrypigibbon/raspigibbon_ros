@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <!-- <rosparam file="$(find raspigibbon_control)/config/controller.yaml" command="load" /> -->
-  <group ns="raspigibbon">
+  <group ns="raspigibbon_on_rviz">
     <include file="$(find raspigibbon_description)/launch/display_xacro.launch" />
     <node name="rviz_joint_subscriber" pkg="raspigibbon_bringup" type="rviz_joint_subscriber.py" />
   </group>
