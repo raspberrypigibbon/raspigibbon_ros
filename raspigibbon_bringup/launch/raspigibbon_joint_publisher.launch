@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
   <group ns="raspigibbon">
-    <node name="raspigibbon_master_publisher" pkg="raspigibbon_bringup" type="raspigibbon_joint_publisher.py" />
+    <node name="raspigibbon_joint_publisher" pkg="raspigibbon_bringup" type="raspigibbon_joint_publisher.py" />
   </group>
 </launch>

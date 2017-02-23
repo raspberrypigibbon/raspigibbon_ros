@@ -9,9 +9,9 @@
   <param name="use_gui" value="$(arg gui)"/>
   <rosparam param="source_list">["joint_states_source"]</rosparam>
   <!-- nodes -->
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-  <node name="joint_state_fixer" pkg="raspigibbon_description" type="rviz_joint_fixer.py" />
+  <node name="rviz_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="rviz_robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="rviz_joint_state_fixer" pkg="raspigibbon_description" type="rviz_joint_fixer.py" />
   <!-- rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
 </launch>

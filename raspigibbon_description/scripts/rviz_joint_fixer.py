@@ -6,8 +6,8 @@ from sensor_msgs.msg import JointState
 
 class Dummy:
     def __init__(self):
-        self.sub = rospy.Subscriber("/joint_states", JointState, self.joint_callback, queue_size=10)
-        self.pub = rospy.Publisher("/joint_states_source", JointState, queue_size=10)
+        self.sub = rospy.Subscriber(rospy.get_namespace()+"/joint_states", JointState, self.joint_callback, queue_size=10)
+        self.pub = rospy.Publisher(rospy.get_namespace()+"/joint_states_source", JointState, queue_size=10)
         self.r = rospy.Rate(20)
 
     def joint_callback(self, msg):
