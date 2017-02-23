@@ -4,6 +4,13 @@
   <xacro:property name="M_PI" value="3.1415926535897931" />
   <xacro:property name="velocity_scale_factor" value="1.0"/>
   <xacro:macro name="base_link">
+    <link name="world"/> 
+
+    <joint name="world2base" type="fixed"> 
+      <parent link="world"/> 
+      <child link="base_link"/> 
+    </joint> 
+
     <link name="base_link">
       <visual>
         <geometry>
