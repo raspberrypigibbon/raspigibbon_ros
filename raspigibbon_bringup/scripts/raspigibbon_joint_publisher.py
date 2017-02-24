@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from futaba_serial_servo import RS30X
 import rospy
 from sensor_msgs.msg import JointState
+from futaba_serial_servo import RS30X
+
 
 class Master:
     def __init__(self):

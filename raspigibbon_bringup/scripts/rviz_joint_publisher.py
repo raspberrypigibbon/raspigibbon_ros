@@ -2,7 +2,9 @@
 # coding: utf-8
 
 import rospy
+import math
 from sensor_msgs.msg import JointState
+
 
 class RvizMaster:
     def __init__(self):
@@ -12,10 +14,10 @@ class RvizMaster:
 
     def joint_callback(self, msg):
         js = JointState();
-        for i in range(1, 6):
-            js.name.append("joint"+str(i))
-            js.position.append(msg.position[i-1]*180.0/3.14159)
-        self.pub.publish(js)
+        if len(msg.position) > 0:
+            js.name = ["joint{}".format(i) for i in range(1, 6)]
+            js.position = [max(-150, min(150, math.degrees(msg.position[i]))) for i in range(0, 5)]
+            self.pub.publish(js)
         self.r.sleep()
 
 if __name__ == "__main__":
@@ -24,6 +26,6 @@ if __name__ == "__main__":
             rospy.init_node("rviz_joint_state_publisher")
             rviz = RvizMaster()
             rospy.spin()
-    except rospy.ROSIntteruptException:
+    except rospy.ROSInterruptException:
         pass
 
