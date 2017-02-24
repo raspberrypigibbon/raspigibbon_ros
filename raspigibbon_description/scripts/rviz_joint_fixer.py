@@ -12,9 +12,10 @@ class Dummy:
 
     def joint_callback(self, msg):
         js = JointState();
-        js.name.append("joint6")
-        js.position.append(-msg.position[4])
-        self.pub.publish(js)
+        if len(msg.position) > 0:
+            js.name.append("joint6")
+            js.position.append(-msg.position[4])
+            self.pub.publish(js)
         self.r.sleep()
 
 if __name__ == "__main__":
