@@ -59,6 +59,34 @@ git clone https://github.com/raspberrypigibbon/raspigibbon_ros.git
 cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
 ```
 
+## Usage
+
+### Raspberry Pi on Raspberry Pi Gibbon
+
+joint data publisher mode
+```
+roslaunch raspigibbon_bringup raspigibbon_joint_publisher.launch
+```
+
+joint data subscriber mode
+```
+roslaunch raspigibbon_bringup raspigibbon_joint_subscriber.launch
+```
+
+### Ubuntu x64
+
+joint data publisher mode
+```
+roslaunch raspigibbon_description display_urdf.launch
+roslaunch raspigibbon_bringup rviz_joint_publisher.launch
+```
+
+joint data subscriber mode
+```
+roslaunch raspigibbon_description display_urdf.launch
+roslaunch raspigibbon_bringup rviz_joint_subscriber.launch
+```
+
 
 ## License
 
