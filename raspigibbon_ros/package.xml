@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>raspigibbon_ros</name>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <description>The raspigibbon_ros package</description>
 
   <maintainer email="tiryoh@gmail.com">Daisuke Sato</maintainer>
