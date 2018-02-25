@@ -16,6 +16,8 @@
   <url type="bugtracker">https://github.com/raspberrypigibbon/raspigibbon_ros/issues</url>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>futaba_serial_servo</run_depend>
+  <run_depend>raspigibbon_bringup</run_depend>
   <run_depend>raspigibbon_description</run_depend>
 
   <export>
