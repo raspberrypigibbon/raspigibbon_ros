@@ -6,7 +6,10 @@ project(raspigibbon_description)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  sensor_msgs
   std_msgs
+  urdf
+  xacro
 )
 
 ## System dependencies are found with CMake's conventions
@@ -102,6 +105,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES crane_plus_description
 #  CATKIN_DEPENDS other_catkin_pkg
+  CATKIN_DEPENDS rospy sensor_msgs std_msgs urdf xacro
 #  DEPENDS system_lib
 )
 
@@ -112,6 +116,10 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 # include_directories(include)
+include_directories(
+  #include
+  ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a C++ library
 # add_library(crane_plus_description
@@ -144,10 +152,10 @@ catkin_package(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# install(PROGRAMS
-#   scripts/my_python_script
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(PROGRAMS
+  scripts/rviz_joint_fixer.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables and/or libraries for installation
 # install(TARGETS crane_plus_description crane_plus_description_node
@@ -170,6 +178,12 @@ catkin_package(
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
+foreach(dir launch meshes robots urdf)
+  install(DIRECTORY ${dir}/ 
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir}
+  )
+endforeach(dir)
+
 #############
 ## Testing ##
 #############
@@ -179,6 +193,12 @@ catkin_package(
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
+if(CATKIN_ENABLE_TESTING)
+  # catkin_add_gtest(raspigibbon_description-urdf-test test/test_urdf.cpp WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
+  # target_link_libraries(raspigibbon_description-urdf-test urdfdom_model)
+  # catkin_add_gtest(raspigibbon_description-urdf-test test/test_urdf.cpp)
+endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+

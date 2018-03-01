@@ -4,13 +4,11 @@
   <version>0.1.1</version>
   <description>The raspigibbon_bringup package</description>
 
-  <!-- One maintainer tag required, multiple allowed, one person per tag --> 
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="tiryoh@gmail.com">Daisuke Sato</maintainer>
+  <maintainer email="shop@rt-net.jp">RT Coporation</maintainer>
 
-  <author email="brast351-github@yahoo.co.jp">Shota Hirama</author>
-  <author email="tiryoh@gmail.com">Daisuke Sato</author>
 
   <!-- One license tag required, multiple allowed, one license per tag -->
   <!-- Commonly used license strings: -->
@@ -18,16 +16,21 @@
   <license>MIT</license>
 
 
-  <!-- Url tags are optional, but mutiple are allowed, one per tag -->
+  <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/crane_plus_bringup</url> -->
+  <!-- <url type="website">http://wiki.ros.org/raspigibbon_bringup</url> -->
+  <url type="website">https://github.com/rt-net/RaspberryPiGibbon/wiki</url>
+  <url type="repository">https://github.com/raspberrypigibbon/raspigibbon_ros</url>
+  <url type="bugtracker">https://github.com/raspberrypigibbon/raspigibbon_ros/issues</url>
 
 
-  <!-- Author tags are optional, mutiple are allowed, one per tag -->
-  <!-- Authors do not have to be maintianers, but could be -->
+  <!-- Author tags are optional, multiple are allowed, one per tag -->
+  <!-- Authors do not have to be maintainers, but could be -->
   <!-- Example: -->
   <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+  <author email="tiryoh@gmail.com">Daisuke Sato</author>
+  <author email="brast351-github@yahoo.co.jp">Shota Hirama</author>
 
 
   <!-- The *_depend tags are used to specify dependencies -->
@@ -43,11 +46,11 @@
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>rospy</build_depend>
-  <build_depend>std_msgs</build_depend>
   <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
   <run_depend>rospy</run_depend>
-  <run_depend>std_msgs</run_depend>
   <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
   <run_depend>futaba_serial_servo</run_depend>
 
 

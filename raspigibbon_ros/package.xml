@@ -4,10 +4,7 @@
   <version>0.1.1</version>
   <description>The raspigibbon_ros package</description>
 
-  <maintainer email="tiryoh@gmail.com">Daisuke Sato</maintainer>
-
-  <author email="tiryoh@gmail.com">Daisuke Sato</author>
-  <author email="brast351-github@yahoo.co.jp">Shota Hirama</author>
+  <maintainer email="shop@rt-net.jp">RT Corporation</maintainer>
 
   <license>MIT</license>
 
@@ -15,10 +12,14 @@
   <url type="repository">https://github.com/raspberrypigibbon/raspigibbon_ros</url>
   <url type="bugtracker">https://github.com/raspberrypigibbon/raspigibbon_ros/issues</url>
 
+  <author email="tiryoh@gmail.com">Daisuke Sato</author>
+  <author email="brast351-github@yahoo.co.jp">Shota Hirama</author>
+
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>futaba_serial_servo</run_depend>
   <run_depend>raspigibbon_bringup</run_depend>
   <run_depend>raspigibbon_description</run_depend>
+  <run_depend>raspigibbon_msgs</run_depend>
 
   <export>
     <metapackage />
