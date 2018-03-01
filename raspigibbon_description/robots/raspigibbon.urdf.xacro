@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<robot name="raspigibbon"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find raspigibbon_description)/urdf/base.urdf.xacro"/>
+  <xacro:include filename="$(find raspigibbon_description)/urdf/link.urdf.xacro"/>
+
+  <!-- ========== Link & Joint ========== -->
+  <xacro:base_link/>
+  <xacro:servo_link linkid="1" meshid="2" jointname="joint1" parent="link0">
+    <origin xyz="0 0 0.029" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="-2.52" upper="2.52" effort="0.5293" velocity="6.159937255"/>
+    <origin xyz="0.000157 0 0.019222"/>
+    <mass value="0.023032"/>
+    <inertia ixx="0.000003514815" ixy="-0.000000000001" iyy="0.000003930066" ixz="-0.000000004487" iyz="0.000000000001" izz="0.000001852796"/>
+  </xacro:servo_link>
+
+  <xacro:servo_link linkid="2" meshid="3" jointname="joint2" parent="link1">
+    <origin xyz="0 0 0.03055" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.52" upper="2.52" effort="0.5293" velocity="6.159937255"/>
+    <origin xyz="0.000136 0 0.007403"/>
+    <mass value="0.032345"/>
+    <inertia ixx="0.000017682369" ixy="-0.000000000049" iyy="0.000019757486" ixz="-0.000000000767" iyz="0.000000000197" izz="0.000004109466"/>
+  </xacro:servo_link>
+
+  <xacro:servo_link linkid="3" meshid="4" jointname="joint3" parent="link2">
+    <origin xyz="0 0 0.08055" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.52" upper="2.52" effort="0.5293" velocity="6.159937255"/>
+    <origin xyz="0.000136 0 0.007403"/>
+    <mass value="0.032345"/>
+    <inertia ixx="0.000017682369" ixy="-0.000000000049" iyy="0.000019757486" ixz="-0.000000000767" iyz="0.000000000197" izz="0.000004109466"/>
+  </xacro:servo_link>
+
+  <xacro:servo_link linkid="4" meshid="5" jointname="joint4" parent="link3">
+    <origin xyz="0 0 0.08055" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.99" upper="1.99" effort="0.5293" velocity="6.159937255"/>
+    <origin xyz="0.000253 0.000821 0.013947"/>
+    <mass value="0.041117"/>
+    <inertia ixx="0.000006913101" ixy="0.000000054083" iyy="0.000009528465" ixz="-0.000000059992" iyz="-0.000000095617" izz="0.000008648857"/>
+  </xacro:servo_link>
+
+  <xacro:hand_link linkid="5" meshid="1" jointname="joint5" parent="link4">
+    <origin xyz="-0.0091 0 0.0342" rpy="0 -1.5708 -1.5708"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.92" upper="0.05" effort="0.5293" velocity="6.159937255"/>
+    <origin xyz="0.000253 0.000821 0.013947"/>
+    <mass value="0.041117"/>
+    <inertia ixx="0.000006913101" ixy="0.000000054083" iyy="0.000009528465" ixz="-0.000000059992" iyz="-0.000000095617" izz="0.000008648857"/>
+  </xacro:hand_link>
+
+  <xacro:hand_link linkid="6" meshid="2" jointname="joint6" parent="link4">
+    <origin xyz="0.0091 0.0 0.0342" rpy="0 -1.5708 -1.5708"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.05" upper="1.92" effort="0.5293" velocity="6.159937255"/>
+    <origin xyz="0.000253 0.000821 0.013947"/>
+    <mass value="0.041117"/>
+    <inertia ixx="0.000006913101" ixy="0.000000054083" iyy="0.000009528465" ixz="-0.000000059992" iyz="-0.000000095617" izz="0.000008648857"/>
+  </xacro:hand_link>
+
+  <!-- ========== Transmission ========== -->
+  <xacro:servo_trans joint_name="joint1" interface="PositionJointInterface"/>
+  <xacro:servo_trans joint_name="joint2" interface="PositionJointInterface"/>
+  <xacro:servo_trans joint_name="joint3" interface="PositionJointInterface"/>
+  <xacro:servo_trans joint_name="joint4" interface="PositionJointInterface"/>
+  <xacro:servo_trans joint_name="joint5" interface="PositionJointInterface"/>
+  <xacro:servo_trans joint_name="joint6" interface="PositionJointInterface"/>
+
+  <!-- ========== Gazebo ========== -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>raspigibbon</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <xacro:base_gazebo/>
+  <xacro:link_gazebo id="1"/>
+  <xacro:link_gazebo id="2"/>
+  <xacro:link_gazebo id="3"/>
+  <xacro:link_gazebo id="4"/>
+  <xacro:link_gazebo id="5"/>
+
+</robot>
