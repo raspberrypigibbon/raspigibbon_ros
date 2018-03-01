@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>futaba_serial_servo</name>
-  <version>0.2.0</version>
+  <version>0.2.1</version>
   <description>The futaba_serial_servo package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 

@@ -2,8 +2,8 @@
 Changelog for package raspigibbon_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.1 (2018-03-01)
+------------------
 * Fix circular dependencies
   https://github.com/ros/rosdistro/pull/17057
 
