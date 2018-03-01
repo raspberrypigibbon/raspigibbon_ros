@@ -2,8 +2,8 @@
 Changelog for package raspigibbon_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.0 (2018-03-01)
+------------------
 * Add raspigibbon_msgs
 * Contributors: Tiryoh
 

@@ -2,8 +2,8 @@
 Changelog for package raspigibbon_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.0 (2018-03-01)
+------------------
 * Fix problems which causes apt package empty
 * Fix website link
 
