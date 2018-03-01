@@ -2,6 +2,9 @@
 Changelog for package raspigibbon_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.2.0 (2018-03-01)
 ------------------
 * Fix problems which causes apt package empty
